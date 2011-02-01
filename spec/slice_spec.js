@@ -17,7 +17,7 @@ describe("slice", function() {
     expect(result).toEqual([5,6,7])
   })
   
-  xit("slices part of a collection - range, where negative means work backwards from the end", function(){
+  it("slices part of a collection - range, where negative means work backwards from the end", function(){
     result = this.cf.slice([5,6,7,8,9], [0, -2])
     expect(result).toEqual([5,6,7,8])
   })

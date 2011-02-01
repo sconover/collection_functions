@@ -1,4 +1,4 @@
-setupArrayEach = function() {  
+arrayEachCf = function() {  
   var breaker = "BREAK"
   var arrayEach = function(collection, iterator){
     for(var i=0; i<collection.length; i++) {
@@ -26,9 +26,11 @@ setupArrayEach = function() {
     return typeof thing.length != "undefined"
   }
   
-  var package = CollectionFunctions(arrayEach, breaker, nothing, doubleEquals, newArray, arrayPush, isArray)
+  return CollectionFunctions(arrayEach, breaker, nothing, doubleEquals, newArray, arrayPush, isArray)
+}
 
+setupArrayEach = function() {  
   var cf = {}
-  package.decorate(cf)
+  arrayEachCf().decorate(cf)
   return cf
 }

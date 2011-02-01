@@ -12,7 +12,7 @@ describe("slice", function() {
     expect(result).toEqual([6,7])
   })
   
-  xit("slices part of a collection - start + end range", function(){
+  it("slices part of a collection - start + end range", function(){
     result = this.cf.slice([5,6,7,8], [0, 2])
     expect(result).toEqual([5,6,7])
   })

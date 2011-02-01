@@ -22,6 +22,16 @@ describe("functions are available, method-style, with the target object as the c
     var result = thing.map(function(item){return "x" + item})
     expect(result).toEqual(["x1", "x2"])
   })
+
+  it("expose array cf for convenience", function(){
+    var thing = {array:[]}
+    CollectionFunctions.Array.decorateObjectStyle(thing, function(){return this.array})
+    
+    thing.array.push(1)
+    thing.array.push(2)
+    var result = thing.map(function(item){return "x" + item})
+    expect(result).toEqual(["x1", "x2"])
+  })
   
 })
 

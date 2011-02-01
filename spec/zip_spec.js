@@ -25,5 +25,14 @@ describe("zip", function() {
     ])
   })
       
+  it("if a collection isn't as long as the others, fill in 'nothing'", function(){
+    var result = this.cf.zip([1,2,3], [4,5], [7])
+    expect(result).toEqual([
+      [1,4,7],
+      [2,5,null],
+      [3,null, null]
+    ])
+  })
+      
 })
 

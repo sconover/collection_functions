@@ -1,0 +1,7 @@
+things that should be configurable:
+  - what gets returned when there's no match
+  - signal for breaking out of a loop
+  
+  - function names...
+  
+...just yield the functions, k-v style, and allow the caller to decide what to do...

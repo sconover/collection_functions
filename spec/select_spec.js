@@ -16,7 +16,7 @@ describe("select", function() {
   
   it("yields the index too", function(){
     var indexes = []
-    var result = this.cf.select([7,8,9,10], function(item, i){
+    this.cf.select([7,8,9,10], function(item, i){
       indexes.push(i)
       return item % 2 == 0
     })
@@ -24,7 +24,7 @@ describe("select", function() {
   })
   
   it("costs the number items in the collection", function(){
-    var result = this.cf.select([7,8,9,10], function(item){return item % 2 == 0})
+    this.cf.select([7,8,9,10], function(item){return item % 2 == 0})
     expect(this.cf.lastCost()).toEqual(4)
   })
     

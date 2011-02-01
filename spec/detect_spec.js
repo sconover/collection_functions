@@ -24,7 +24,7 @@ describe("detect", function() {
   })
   
   it("costs the number of iterations to the 'hit' (not more)", function(){
-    var result = this.cf.detect([7,8,9], function(item){return item==8 || item==9})
+    this.cf.detect([7,8,9], function(item){return item==8 || item==9})
     expect(this.cf.lastCost()).toEqual(2)
   })
     

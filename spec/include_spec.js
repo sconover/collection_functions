@@ -15,7 +15,7 @@ describe("include", function() {
   })
   
   it("costs the number of iterations to the 'hit' (not more)", function(){
-    var result = this.cf.include([7,8,8,9], 8)
+    this.cf.include([7,8,8,9], 8)
     expect(this.cf.lastCost()).toEqual(2)
   })
     

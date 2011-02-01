@@ -6,6 +6,11 @@ setupArrayEach = function() {
       if (iterator(collection[i])==breaker) break
     }
   }
+
+  var nothing = function(){
+    return null
+  }
+  
   var doubleEquals = function(a,b){
     return a == b
   }
@@ -22,7 +27,7 @@ setupArrayEach = function() {
     return typeof thing.length != "undefined"
   }
   
-  var package = CollectionFunctions(arrayEach, breaker, doubleEquals, newArray, arrayPush, isArray)
+  var package = CollectionFunctions(arrayEach, breaker, nothing, doubleEquals, newArray, arrayPush, isArray)
   package.decorate(cf)
   return cf
 }

@@ -18,5 +18,14 @@ describe("across - put together multiple collections and use most cf capabilitie
     })
   })
       
+  describe("across detect", function() {
+    it("detects across collections", function(){
+      var result = this.cf.across([1,2,3], [4,5,6], [7,8,9]).detect(function(entry, i){
+        if (entry[2]==8) return true
+      })
+      expect(result).toEqual([2,5,8])
+    })
+  })
+      
 })
 

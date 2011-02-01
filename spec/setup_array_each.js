@@ -1,8 +1,13 @@
 arrayEachCf = function() {  
-  var breaker = "BREAK"
-  var arrayEach = function(collection, iterator){
-    for(var i=0; i<collection.length; i++) {
-      if (iterator(collection[i])==breaker) break
+  var arrayIterator = function(collection){
+    var position = 0
+    return {
+      next: function() {
+        var result = collection[position]
+        position += 1
+        return result
+      },
+      hasNext: function(){return position<collection.length}
     }
   }
 
@@ -26,7 +31,7 @@ arrayEachCf = function() {
     return typeof thing.length != "undefined"
   }
   
-  return CollectionFunctions(arrayEach, breaker, nothing, doubleEquals, newArray, arrayPush, isArray)
+  return CollectionFunctions(arrayIterator, nothing, doubleEquals, newArray, arrayPush, isArray)
 }
 
 setupArrayEach = function() {  

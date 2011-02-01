@@ -1,3 +1,9 @@
+bitter?
+
+named-param style
+  defaults?
+
+
 things that should be configurable:
   - what gets returned when there's no match
   - signal for breaking out of a loop

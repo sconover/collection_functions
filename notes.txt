@@ -8,3 +8,7 @@ things that should be configurable:
 
 later: good errors for when you don't define a feature.
   checkFeatures() ?
+  
+think of how to do dogfood around arguments and general array handling...
+  call self / lazy initializer?
+  named anonymous function?

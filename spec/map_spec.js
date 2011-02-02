@@ -29,6 +29,33 @@ describe("map", function() {
     fArr.map([7,8,9], function(item){return "x" + item})
     expect(fArr.lastCost()).toEqual(3)
   })
+  
+  describe("feature requirements", function(){
+
+    it("requires newCollection, append, and iterator", function(){
+      expect(CollectionFunctions({}).functions.
+        map).toBeUndefined()
+      
+      expect(CollectionFunctions({iterator:fArr.iterator}).functions.
+        map).toBeUndefined()
+      
+      expect(CollectionFunctions({newCollection:function(){return []},
+                                  iterator:fArr.iterator,
+                                  append:function(array, item){array.push(item)}}).functions.
+        map).toBeDefined()
+    })    
+
+    it("works with newCollection, append, and iterator", function(){
+      var fMin = CollectionFunctions({iterator:fArr.iterator,
+                                      newCollection:function(){return []},
+                                      append:function(array, item){array.push(item)}}).functions
+      
+      var result = fMin.map([7,8,9], function(item){return "x" + item})
+      expect(result).toEqual(["x7", "x8", "x9"])
+    })    
+
+  })
+  
     
 })
 

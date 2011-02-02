@@ -16,7 +16,7 @@ describe("flatten", function() {
   
   describe("feature requirements", function(){
 
-    it("requires iterator, newCollection, and isCollection", function(){
+    it("requires iterator, newCollection, isCollection, and append", function(){
       expect(CollectionFunctions({iterator:fArr.iterator}).functions.
         flatten).toBeUndefined()
 
@@ -36,7 +36,7 @@ describe("flatten", function() {
         flatten).toBeDefined()
     })    
 
-    it("works with iterator, newCollection, and isCollection", function(){
+    it("works with iterator, newCollection, isCollection, and append", function(){
       var fMin = CollectionFunctions({iterator:fArr.iterator,
                                       newCollection:function(){return []},
                                       isCollection:function(thing){ return typeof thing.length != "undefined" },

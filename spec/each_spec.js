@@ -1,6 +1,6 @@
 require("./spec_helper.js");
 
-describe("each, cost", function() {
+describe("each", function() {
   
   var fArr = CollectionFunctions.Array.functions
   
@@ -15,12 +15,7 @@ describe("each, cost", function() {
     fArr.each([7,8,9], function(item, i){indexes.push(i)})
     expect(indexes).toEqual([0,1,2])
   })
-  
-  it("stores information about cost.  cost is the number of items iterated through.", function(){
-    fArr.each([7,8,9], function(item, i){})
-    expect(fArr.lastCost()).toEqual(3)
-  })
-  
+    
   describe("feature requirements", function(){
     
     it("requires iterator (of course)", function(){
@@ -30,12 +25,19 @@ describe("each, cost", function() {
     })
     
     it("works if just iterator is specified", function(){
-      var fJustIterator = CollectionFunctions({iterator:fArr.newIterator}).functions
+      var fJustIterator = CollectionFunctions({iterator:fArr.iterator}).functions
       var results = []
       fJustIterator.each([7,8,9], function(item){results.push(item)})
       expect(results).toEqual([7,8,9])
     })
     
+  })
+  
+  describe("cost", function(){
+    it("is the number of items iterated through (N)", function(){
+      fArr.each([7,8,9], function(item, i){})
+      expect(fArr.lastCost()).toEqual(3)
+    })
   })
 })
 

@@ -27,7 +27,7 @@ describe("functions are available, method-style, with the target object as the c
     var Thing = function() { this.array = [] }
     
     CollectionFunctions({
-      iterator:function(thing) {return CollectionFunctions.Array.functions.newIterator(thing.array)}, 
+      iterator:function(thing) {return CollectionFunctions.Array.functions.iterator(thing.array)}, 
       nothing:function(){return null}, 
       equals:function(a,b){return a==b},
       newCollection:function(){return new Thing()},

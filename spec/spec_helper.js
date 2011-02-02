@@ -11,7 +11,7 @@ require("collection_functions")
 
 minimalArrayCF = function(){
   return CollectionFunctions({
-    iterator:CollectionFunctions.Array.functions.newIterator,
+    iterator:CollectionFunctions.Array.functions.iterator,
     nothing:function(){return null}
   })
 }

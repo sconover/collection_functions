@@ -14,6 +14,21 @@ describe("concat", function() {
     expect(result).toEqual([4,5,6,7,8,9,10,11])
   })
   
+  describe("feature requirements", function(){
+
+    it("requires a newCollection feature if you don't have a concat feature", function(){
+      var fMin = minimalArrayCF().functions
+      var attemptConcat = function(){fMin.concat([4,5,6], [7,8,9], [10,11])}
+      expect(attemptConcat).toThrow("Feature 'newCollection' is required in order to perform this operation.")
+    })    
+    
+    xit("if you supply a concat feature you don't need to also supply newCollection", function(){
+      var result = fArr.concat([4,5,6], [7,8,9], [10,11])
+      expect(result).toEqual([4,5,6,7,8,9,10,11])
+    })    
+    
+  })
+  
   describe("cost", function(){
 
     it("by default we traverse through the elements in each collection and append to a new collection", function(){

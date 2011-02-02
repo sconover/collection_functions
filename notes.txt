@@ -19,6 +19,13 @@ bang methods do work in place
 
 cost should really be counted by # of next's, not in 'each'
 
+declare features to function mappings up front?
+  then only return what's available to use...
+  also more performant...feature functions are resolved early.
+  need to do this such that it's not developer-error-prone.
+    hmm...just determine this when doing function mapping at the bottom?
+      default function..."BUG: Feature not available, this operation should not have been exposed."
+    
 implementations by feature...
   size: efficient size function
   ["size"]

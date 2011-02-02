@@ -17,20 +17,13 @@ describe("each", function() {
   })
     
   describe("feature requirements", function(){
-    
-    it("requires iterator (of course)", function(){
-      var fBare = CollectionFunctions({}).functions
-      var attemptEach = function(){fBare.each([4,5,6], function(item){/*never gets here*/})}
-      expect(attemptEach).toThrow("Feature 'iterator' is required in order to perform this operation.")
-    })
-    
-    it("works if just iterator is specified", function(){
-      var fJustIterator = CollectionFunctions({iterator:fArr.iterator}).functions
-      var results = []
-      fJustIterator.each([7,8,9], function(item){results.push(item)})
-      expect(results).toEqual([7,8,9])
-    })
-    
+    it("requires iterator", function(){
+      expect(CollectionFunctions({}).functions.
+        each).toBeUndefined()
+        
+      expect(CollectionFunctions({iterator:fArr.iterator}).functions.
+        each).toBeDefined()
+    })    
   })
   
   describe("cost", function(){

@@ -16,25 +16,32 @@ describe("concat", function() {
   
   describe("feature requirements", function(){
 
-    it("requires a newCollection feature if you don't have a concat feature", function(){
-      var fMin = minimalArrayCF().functions
-      var attemptConcat = function(){fMin.concat([4,5,6], [7,8,9], [10,11])}
-      expect(attemptConcat).toThrow("Feature 'newCollection' is required in order to perform this operation.")
+    it("requires newCollection and append features if you don't have a concat feature", function(){
+      expect(CollectionFunctions({}).functions.
+        concat).toBeUndefined()
+        
+      expect(CollectionFunctions({newCollection:function(){return []}}).functions.
+        concat).toBeUndefined()
+
+      expect(CollectionFunctions({newCollection:function(){return []}, 
+                                  append:function(array, item){array.push(item)}}).functions.
+        concat).toBeDefined()
     })    
 
-    it("requires an append feature if you don't have a concat feature", function(){
-      var fMin = minimalArrayCF().appendFeatures({
-        newCollection:function(){return []}
-      }).functions
-      var attemptConcat = function(){fMin.concat([4,5,6], [7,8,9], [10,11])}
-      expect(attemptConcat).toThrow("Feature 'append' is required in order to perform this operation.")
+    it("is available if you supply a concat features", function(){
+      expect(CollectionFunctions({}).functions.
+        concat).toBeUndefined()
+
+      expect(
+        CollectionFunctions({concat:function(){
+                              var firstArray = arguments[0]
+                              var otherArrays = []
+                              for(var i=1; i<arguments.length; i++) {otherArrays[i-1] = arguments[i]}
+                              return firstArray.concat.apply(firstArray, otherArrays)
+                            }}).functions.
+        concat).toBeDefined()
     })    
-    
-    it("if you supply a concat feature you don't need to also supply newCollection", function(){
-      var result = fArr.concat([4,5,6], [7,8,9], [10,11])
-      expect(result).toEqual([4,5,6,7,8,9,10,11])
-    })    
-    
+
   })
   
   describe("cost", function(){

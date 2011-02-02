@@ -26,14 +26,14 @@ describe("functions are available, method-style, with the target object as the c
   it("works with a prototype...returns new collections that are like the decorated object", function(){
     var Thing = function() { this.array = [] }
     
-    CollectionFunctions(
-      function(thing) {return CollectionFunctions.Array.functions.newIterator(thing.array)}, 
-      function(){return null}, 
-      function(a,b){return a==b},
-      function(){return new Thing()},
-      function(thing, item){thing.array.push(item)},
-      function(object){return object.constructor == Thing}
-    ).decorateObjectStyle(Thing.prototype, function(){return this})
+    CollectionFunctions({
+      iterator:function(thing) {return CollectionFunctions.Array.functions.newIterator(thing.array)}, 
+      nothing:function(){return null}, 
+      equals:function(a,b){return a==b},
+      newCollection:function(){return new Thing()},
+      append:function(thing, item){thing.array.push(item)},
+      isCollection:function(object){return object.constructor == Thing}
+    }).decorateObjectStyle(Thing.prototype, function(){return this})
     
     var thing = new Thing()
     

@@ -11,7 +11,7 @@ describe("size", function() {
   
   describe("cost", function() {
     
-    xit("cost is N if no length function is supplied", function(){
+    it("cost is N if no length function is supplied", function(){
       var fMin = minimalArrayCF().functions
       expect(fMin.size([5,6,7,8])).toEqual(4)
       expect(fMin.lastCost()).toEqual(4)

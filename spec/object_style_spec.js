@@ -40,7 +40,7 @@ describe("functions are available, method-style, with the target object as the c
     thing.array.push(1)
     thing.array.push(2)
     var result = thing.map(function(item){return "x" + item})
-    expect(result.array).toEqual(["x1", "x2"])
+    expect(result).toEqual(["x1", "x2"])
     
     var otherThing = new Thing()
     otherThing.array.push(3)

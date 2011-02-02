@@ -27,6 +27,11 @@ describe("size", function() {
       expect(fMinPlusSize.lastCost()).toEqual(0)
     })
     
+    it("default array size function is efficient", function(){
+      expect(fArr.size([5,6,7,8])).toEqual(4)
+      expect(fArr.lastCost()).toEqual(0)
+    })
+    
   })
 })
 

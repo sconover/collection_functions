@@ -16,6 +16,15 @@ bang methods do work in place
           collection is sorted before intersect, uniq, differ, etc
             ...test-drive using cost
 
+
+implementations by feature...
+  size: efficient size function
+  ["size"]
+  ["size", "sort"]
+  feature.size && feature.sort
+  ...these are determined once, up-front
+  
+
 would be neat if you could dictate space- or time-efficient
 
 tests for array and some canonical non-array

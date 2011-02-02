@@ -10,5 +10,10 @@ describe("pluck - a convenient form of map", function() {
     expect(this.cf.pluck(arr, 'b')).toEqual(['X','Y','Z'])
   })
 
+  it("if there's a function with that name, try to invoke it", function(){
+    var arr = [{a:function(){return 1}}, {a:function(){return 2}}, {a:function(){return 3}}]
+    expect(this.cf.pluck(arr, 'a')).toEqual([1,2,3])
+  })
+
 })
 

@@ -1,8 +1,7 @@
-bitter?
-
 named-param style
   defaults?
 
+accumulated cost makes things ugly.  what to do?
 
 things that should be configurable:
   - what gets returned when there's no match

@@ -16,7 +16,7 @@ describe("concat", function() {
   
   it("costs the number items in both collections", function(){
     this.cf.concat([4,5,6], [7,8,9])
-    expect(this.cf.lastCost()).toEqual(6)
+    expect(this.cf.lastCost()).toEqual(3)
   })
     
 })

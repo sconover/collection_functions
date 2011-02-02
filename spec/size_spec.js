@@ -17,9 +17,14 @@ describe("size", function() {
       expect(fMin.lastCost()).toEqual(4)
     })
     
-    xit("cost is constant if a length function is supplied", function(){
-      expect(fArr.size([5,6,7,8])).toEqual(4)
-      expect(fArr.lastCost()).toEqual(0)
+    it("cost is constant if a size function is supplied", function(){
+      var fMinPlusSize = 
+        minimalArrayCF().
+          appendFeatures({
+            size: function(arr){return arr.length}
+          }).functions
+      expect(fMinPlusSize.size([5,6,7,8])).toEqual(4)
+      expect(fMinPlusSize.lastCost()).toEqual(0)
     })
     
   })

@@ -9,3 +9,9 @@ for(var key in jasmine) {
 
 require("collection_functions")
 
+minimalArrayCF = function(){
+  return CollectionFunctions({
+    newIterator:CollectionFunctions.Array.functions.newIterator
+  })
+}
+

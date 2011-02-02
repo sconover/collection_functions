@@ -2,21 +2,21 @@ require("./spec_helper.js");
 
 describe("detect", function() {
   
-  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
+  var fArr = CollectionFunctions.Array.functions
       
   it("finds the first match from the collection", function(){
-    var result = this.cf.detect([7,8,9], function(item){return item==8 || item==9})
+    var result = fArr.detect([7,8,9], function(item){return item==8 || item==9})
     expect(result).toEqual(8)
   })
   
   it("returns null if there's no match", function(){
-    var result = this.cf.detect([7,8,9], function(item){return item==22})
+    var result = fArr.detect([7,8,9], function(item){return item==22})
     expect(result).toEqual(null)
   })
   
   it("yields the index alongside the item", function(){
     var indexes = []
-    this.cf.detect([7,8,9], function(item, i){
+    fArr.detect([7,8,9], function(item, i){
       indexes.push(i)
       return item==8 || item==9
     })
@@ -24,8 +24,8 @@ describe("detect", function() {
   })
   
   it("costs the number of iterations to the 'hit' (not more)", function(){
-    this.cf.detect([7,8,9], function(item){return item==8 || item==9})
-    expect(this.cf.lastCost()).toEqual(2)
+    fArr.detect([7,8,9], function(item){return item==8 || item==9})
+    expect(fArr.lastCost()).toEqual(2)
   })
     
 })

@@ -8,10 +8,14 @@ describe("differ", function() {
     var result = fArr.differ([7,7,8,9,10,10,11], [8,10])
     expect(result).toEqual([7,9,11])
   })
-    
-  it("cost is high.  this is inefficient for now.", function(){
-    fArr.differ([7,7,8,9,10,10,11], [8,10])
-    expect(fArr.lastCost()).toEqual(28)
+
+  describe("cost", function(){
+
+    it("is high.  this is inefficient for now.", function(){
+      fArr.differ([7,7,8,9,10,10,11], [8,10])
+      expect(fArr.lastCost()).toEqual(28)
+    })
+
   })
     
 })

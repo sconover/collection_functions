@@ -27,6 +27,34 @@ describe("select", function() {
     fArr.select([7,8,9,10], function(item){return item % 2 == 0})
     expect(fArr.lastCost()).toEqual(4)
   })
+
+  describe("feature requirements", function(){
+
+    it("requires newCollection, iterator, and append", function(){
+      expect(CollectionFunctions({}).functions.
+        select).toBeUndefined()
+        
+      expect(CollectionFunctions({iterator:fArr.iterator}).functions.
+        select).toBeUndefined()
+
+      expect(CollectionFunctions({newCollection:function(){return []}, 
+                                  iterator:fArr.iterator,
+                                  append:function(array, item){array.push(item)}}).functions.
+        select).toBeDefined()
+    })    
+
+    it("works with newCollection, iterator, and append", function(){
+      var fMin = CollectionFunctions({newCollection:function(){return []}, 
+                                      iterator:fArr.iterator,
+                                      append:function(array, item){array.push(item)}}).functions
+      var result = fMin.select([7,8,9,10], function(item){return item % 2 == 0})
+      expect(result).toEqual([8,10])
+    })    
+
+  })
+
+    
+
     
 })
 

@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("zip", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("zip is like multi-each if you provide it a callback", function(){
     var results = []

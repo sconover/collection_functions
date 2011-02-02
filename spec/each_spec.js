@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("each, cost", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
   
   it("yields each member of the collection", function(){
     var results = []

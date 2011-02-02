@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("remove", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("removes the value at an index", function(){
     var result = this.cf.remove([7,8,9,10], 2)

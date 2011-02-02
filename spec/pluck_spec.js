@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("pluck - a convenient form of map", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("for each item, 'plucks' the property name, creating a new array with the results", function(){
     var arr = [{a:1, b:'X'}, {a:2, b:'Y'}, {a:3, b:'Z'}]

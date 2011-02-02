@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("slice", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("slices part of a collection - start + length", function(){
     var result = this.cf.slice([5,6,7,8], 1, 3)

@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("inspect", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("calls inspect on each item and prints them in a comma-delimited list", function(){
     var one = {inspect:function(){return "one"}}

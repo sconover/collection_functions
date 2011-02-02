@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("detect", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("finds the first match from the collection", function(){
     var result = this.cf.detect([7,8,9], function(item){return item==8 || item==9})

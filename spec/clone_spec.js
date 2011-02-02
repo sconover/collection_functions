@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("clone", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("shallow-copy a collection", function(){
     var obj = {a:1}

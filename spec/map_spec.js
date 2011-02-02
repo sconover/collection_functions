@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("map", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("using the transformer function, convert each item of the collection and return as a new collection", function(){
     var result = this.cf.map([7,8,9], function(item){return "x" + item})

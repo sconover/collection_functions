@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("concat", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("make a new collection from two collections", function(){
     var result = this.cf.concat([4,5,6], [7,8,9])

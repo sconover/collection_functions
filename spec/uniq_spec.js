@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("uniq", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("drops duplicate values", function(){
     var result = this.cf.uniq([7,8,9,10,10,11,10,9,10])

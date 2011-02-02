@@ -8,5 +8,4 @@ for(var key in jasmine) {
 }
 
 require("collection_functions")
-require("setup_array_each")
 

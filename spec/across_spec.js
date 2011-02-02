@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("across - put together multiple collections and use most cf capabilities", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   describe("across each", function() {
     it("yields slices across collections.  it's like zip given a callback, but yields the whole entry collection", function(){

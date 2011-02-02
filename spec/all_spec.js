@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("all", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
   
   it("returns all members of the collection in a new collection wrapper", function(){
     var original = [7,8,9]

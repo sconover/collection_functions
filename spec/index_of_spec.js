@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("indexOf", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("finds the index of the first match from the collection", function(){
     var result = this.cf.indexOf([7,8,8,9], 8)
@@ -23,7 +23,7 @@ describe("indexOf", function() {
 
 describe("include", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("is like indexOf except returns boolean if found", function(){
     var result = this.cf.include([7,8,8,9], 8)

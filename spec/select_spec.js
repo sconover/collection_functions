@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("select", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("takes the matching members of the old collection and makes a new collection", function(){
     var result = this.cf.select([7,8,9,10], function(item){return item % 2 == 0})

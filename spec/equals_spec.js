@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("equals", function() {
   
-  beforeEach(function(){ this.cf = setupArrayEach() })
+  beforeEach(function(){ this.cf = CollectionFunctions.Array.functions })
       
   it("is equal if the contents are equal and in matching positions", function(){
     expect(this.cf.equals([7,8,9,10], [7,8,9,10])).toEqual(true)

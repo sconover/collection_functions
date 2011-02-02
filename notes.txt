@@ -17,6 +17,8 @@ bang methods do work in place
             ...test-drive using cost
 
 
+cost should really be counted by # of next's, not in 'each'
+
 implementations by feature...
   size: efficient size function
   ["size"]

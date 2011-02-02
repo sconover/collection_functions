@@ -22,7 +22,7 @@ describe("concat", function() {
       expect(attemptConcat).toThrow("Feature 'newCollection' is required in order to perform this operation.")
     })    
     
-    xit("if you supply a concat feature you don't need to also supply newCollection", function(){
+    it("if you supply a concat feature you don't need to also supply newCollection", function(){
       var result = fArr.concat([4,5,6], [7,8,9], [10,11])
       expect(result).toEqual([4,5,6,7,8,9,10,11])
     })    

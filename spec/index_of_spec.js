@@ -18,7 +18,31 @@ describe("indexOf", function() {
     fArr.include([7,8,8,9], 8)
     expect(fArr.lastCost()).toEqual(2)
   })
-    
+  
+  describe("feature requirements", function(){
+
+    it("requires iterator, nothing, equals", function(){
+      expect(CollectionFunctions({iterator:fArr.iterator}).functions.
+        indexOf).toBeUndefined()
+      
+      expect(CollectionFunctions({iterator:fArr.iterator, 
+                                  nothing:function(){return null},
+                                  equals:function(a,b){return a==b}}).functions.
+        indexOf).toBeDefined()
+    })    
+
+    it("works with iterator, nothing, equals", function(){
+      var fMin = CollectionFunctions({iterator:fArr.iterator, 
+                                      nothing:function(){return null},
+                                      equals:function(a,b){return a==b}}).functions
+      
+      var result = fMin.indexOf([7,8,8,9], 8)
+      expect(result).toEqual(1)
+    })    
+
+  })
+  
+  
 })
 
 describe("include", function() {

@@ -1,3 +1,25 @@
+bang methods do work in place
+  you need in-place editing capability to do things in place
+    append is an example of in-place editing
+    need other features like remove and insert
+      even more reason to have some sort of rf'd feature checking capability...
+      feature("append")()
+      capability("append")(collection, item)
+      capability("new")()
+        insert, remove, concat, etc
+      contained in methods that fall back to other features?
+        concat -> new + append, append, append
+        length -> each(...count...)
+        test-drive using cost
+      same with comparable
+        once this feature is available, attempt to determine whether a 
+          collection is sorted before intersect, uniq, differ, etc
+            ...test-drive using cost
+
+would be neat if you could dictate space- or time-efficient
+
+tests for array and some canonical non-array
+
 named-param style
   defaults?
 
@@ -13,9 +35,3 @@ things that should be configurable:
 
 later: good errors for when you don't define a feature.
   checkFeatures() ?
-  
-think of how to do dogfood around arguments and general array handling...
-  call self / lazy initializer?
-  named anonymous function?
-  
-dogfood on the multi scenario?  think about this...

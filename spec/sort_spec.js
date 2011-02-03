@@ -70,9 +70,15 @@ describe("sort", function() {
     })
     
     it("if you provide a sort feature the cost is zero", function(){      
+      var fMin = CollectionFunctions({sort:function(array){ return [].concat(array).sort()}}).functions
+      expect(fMin.sort([6,5,8,7])).toEqual([5,6,7,8])
+      expect(fMin.lastCost()).toEqual(0)
     })
 
     it("the array cf has a sort fearure", function(){      
+      fArr.lastCost() //ugh, side effects of cost.  cost is a bit of a mess isn't it.
+      expect(fArr.sort([6,5,8,7])).toEqual([5,6,7,8])
+      expect(fArr.lastCost()).toEqual(0)
     })
   })
 })

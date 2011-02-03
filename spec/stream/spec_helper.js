@@ -13,15 +13,13 @@ EOF = "THIS IS THE END"
 
 arrayStream = function(arr) {
   var position = 0
-  return {
-    next: function() {
-      if (position == arr.length) {
-        return EOF
-      } else {
-        var result = arr[position]
-        position += 1
-        return result
-      }
+  return function() {
+    if (position == arr.length) {
+      return EOF
+    } else {
+      var result = arr[position]
+      position += 1
+      return result
     }
   }
 }

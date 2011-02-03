@@ -9,6 +9,26 @@ describe("size", function() {
     expect(result).toEqual(4)
   })
   
+  describe("feature requirements", function(){
+
+    it("requires iterator if you don't have the size feature", function(){
+      expect(CollectionFunctions({}).functions.
+        size).toBeUndefined()
+        
+      expect(CollectionFunctions({iterator:fArr.iterator}).functions.
+        size).toBeDefined()
+    })    
+
+    it("is available if you supply a size features", function(){
+      expect(CollectionFunctions({}).functions.
+        size).toBeUndefined()
+        
+      expect(CollectionFunctions({size:function(array){return array.length}}).functions.
+        size).toBeDefined()
+    })    
+
+  })
+  
   describe("cost", function() {
     
     it("cost is N if no length function is supplied", function(){

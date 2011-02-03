@@ -9,6 +9,13 @@ describe("size", function() {
     expect(result).toEqual(4)
   })
   
+  describe("empty", function(){
+    it("is empty when size is 0", function(){
+      expect(fArr.empty([5,6,7,8])).toEqual(false)
+      expect(fArr.empty([])).toEqual(true)
+    })
+  })
+  
   describe("feature requirements", function(){
 
     it("requires iterator if you don't have the size feature", function(){

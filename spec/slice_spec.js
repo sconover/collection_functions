@@ -21,6 +21,32 @@ describe("slice", function() {
     result = fArr.slice([5,6,7,8,9], [0, -2])
     expect(result).toEqual([5,6,7,8])
   })
+
+  describe("feature requirements", function(){
+
+    it("requires newCollection, append, and iterator", function(){
+      expect(CollectionFunctions({}).functions.
+        slice).toBeUndefined()
+      
+      expect(CollectionFunctions({iterator:fArr.iterator}).functions.
+        slice).toBeUndefined()
+      
+      expect(CollectionFunctions({newCollection:function(){return []},
+                                  iterator:fArr.iterator,
+                                  append:function(array, item){array.push(item)}}).functions.
+        slice).toBeDefined()
+    })    
+
+    it("works with newCollection, append, and iterator", function(){
+      var fMin = CollectionFunctions({iterator:fArr.iterator,
+                                      newCollection:function(){return []},
+                                      append:function(array, item){array.push(item)}}).functions
+      
+      var result = fMin.slice([5,6,7,8], 1, 3)
+      expect(result).toEqual([6,7,8])
+    })    
+
+  })
   
 })
 

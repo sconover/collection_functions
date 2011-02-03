@@ -50,7 +50,7 @@ describe("concat", function() {
       var fMin = minimalArrayCF().appendFeatures({
         newCollection:function(){return []},
         append:function(array, item){array.push(item)}
-      }).functions
+      }).withStatTracking.functions
       expect(fMin.concat([4,5,6], [7,8,9], [10,11])).toEqual([4,5,6,7,8,9,10,11])
       expect(fMin.lastCost()).toEqual(8)
     })
@@ -65,14 +65,16 @@ describe("concat", function() {
           for(var i=1; i<arguments.length; i++) {otherArrays[i-1] = arguments[i]}
           return firstArray.concat.apply(firstArray, otherArrays)
         }
-      }).functions
+      }).withStatTracking.functions
       expect(fMin.concat([4,5,6], [7,8,9], [10,11])).toEqual([4,5,6,7,8,9,10,11])
       expect(fMin.lastCost()).toEqual(0)
     })
     
     it("default array cf specifies a concat feature and is therefore zero cost", function(){
-      expect(fArr.concat([4,5,6], [7,8,9], [10,11])).toEqual([4,5,6,7,8,9,10,11])
-      expect(fArr.lastCost()).toEqual(0)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      expect(fArrWithStats.concat([4,5,6], [7,8,9], [10,11])).toEqual([4,5,6,7,8,9,10,11])
+      expect(fArrWithStats.lastCost()).toEqual(0)
     })
     
   })

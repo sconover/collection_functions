@@ -43,13 +43,13 @@ describe("is sorted", function() {
   describe("cost", function() {
     
     it("cost is the number of elements in the collection, is the collection is sorted", function(){      
-      var fMin = minimalArrayCF().appendFeatures({comparator:numberComparator}).functions
+      var fMin = minimalArrayCF().appendFeatures({comparator:numberComparator}).withStatTracking.functions
       fMin.isSorted([5,6,7,8])
       expect(fMin.lastCost()).toEqual(4)
     })
     
     it("cost is the number of elements to the first unsorted element, if unsorted", function(){      
-      var fMin = minimalArrayCF().appendFeatures({comparator:numberComparator}).functions
+      var fMin = minimalArrayCF().appendFeatures({comparator:numberComparator}).withStatTracking.functions
       fMin.isSorted([5,7,6,8])
       expect(fMin.lastCost()).toEqual(3)
     })

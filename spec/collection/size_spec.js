@@ -32,7 +32,7 @@ describe("size", function() {
   describe("cost", function() {
     
     it("cost is N if no length function is supplied", function(){
-      var fMin = minimalArrayCF().functions
+      var fMin = minimalArrayCF().withStatTracking.functions
       expect(fMin.size([5,6,7,8])).toEqual(4)
       expect(fMin.lastCost()).toEqual(4)
     })
@@ -42,14 +42,16 @@ describe("size", function() {
         minimalArrayCF().
           appendFeatures({
             size: function(arr){return arr.length}
-          }).functions
+          }).withStatTracking.functions
       expect(fMinPlusSize.size([5,6,7,8])).toEqual(4)
       expect(fMinPlusSize.lastCost()).toEqual(0)
     })
     
     it("default array size function is efficient", function(){
-      expect(fArr.size([5,6,7,8])).toEqual(4)
-      expect(fArr.lastCost()).toEqual(0)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      expect(fArrWithStats.size([5,6,7,8])).toEqual(4)
+      expect(fArrWithStats.lastCost()).toEqual(0)
     })
     
   })

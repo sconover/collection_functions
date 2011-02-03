@@ -53,7 +53,7 @@ describe("clone", function() {
       var fMin = minimalArrayCF().appendFeatures({
         newCollection:function(){return []},
         append:function(array, item){array.push(item)}
-      }).functions
+      }).withStatTracking.functions
       var original = [7,8,9]
       var clone = fMin.clone(original)
       expect(clone).toEqual([7,8,9])
@@ -71,15 +71,17 @@ describe("clone", function() {
           for(var i=1; i<arguments.length; i++) {otherArrays[i-1] = arguments[i]}
           return firstArray.concat.apply(firstArray, otherArrays)
         }
-      }).functions
+      }).withStatTracking.functions
       
       expect(fMin.clone([7,8,9])).toEqual([7,8,9])
       expect(fMin.lastCost()).toEqual(0)
     })
 
     it("array cf has the concat feature specified and therefore is zero-cost", function(){
-      expect(fArr.clone([7,8,9])).toEqual([7,8,9])
-      expect(fArr.lastCost()).toEqual(0)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      expect(fArrWithStats.clone([7,8,9])).toEqual([7,8,9])
+      expect(fArrWithStats.lastCost()).toEqual(0)
     })
   })
   

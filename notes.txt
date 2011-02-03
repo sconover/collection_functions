@@ -5,7 +5,7 @@ sorted notes...
     should you be able to sort on insertion?
   should you be able to say to uniq, "do try to check the array, to see if it's sorted, then determine whether to use a cheap or expensive algorithm (sort + uniq vs just uniq)".  The degenerate case is sort cost + 2N vs sort cost + N
 
-need to implement sort and make the set-style methods not be n^n
+need to implement sort and make the set-style methods not be n^2
 
 bang methods do work in place
   you need in-place editing capability to do things in place

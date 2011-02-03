@@ -42,8 +42,10 @@ describe("differ", function() {
   describe("cost", function(){
 
     it("is high.  this is inefficient for now.", function(){
-      fArr.differ([7,7,8,9,10,10,11], [8,10])
-      expect(fArr.lastCost()).toEqual(28)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      fArrWithStats.differ([7,7,8,9,10,10,11], [8,10])
+      expect(fArrWithStats.lastCost()).toEqual(28)
     })
 
   })

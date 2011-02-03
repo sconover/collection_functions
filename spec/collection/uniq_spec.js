@@ -39,8 +39,10 @@ describe("uniq", function() {
   })
     
   it("cost is high.  this is inefficient for now.", function(){
-    fArr.uniq([7,8,9,10,10,11])
-    expect(fArr.lastCost()).toEqual(20)
+    var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+    
+    fArrWithStats.uniq([7,8,9,10,10,11])
+    expect(fArrWithStats.lastCost()).toEqual(20)
   })
     
 })

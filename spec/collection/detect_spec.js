@@ -42,8 +42,10 @@ describe("detect", function() {
   
   describe("cost", function(){
     it("is the number of iterations to the 'hit' (not more)", function(){
-      fArr.detect([7,8,9], function(item){return item==8 || item==9})
-      expect(fArr.lastCost()).toEqual(2)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      fArrWithStats.detect([7,8,9], function(item){return item==8 || item==9})
+      expect(fArrWithStats.lastCost()).toEqual(2)
     })
   })
 

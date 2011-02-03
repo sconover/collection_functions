@@ -24,8 +24,10 @@ describe("select", function() {
   })
   
   it("costs the number items in the collection", function(){
-    fArr.select([7,8,9,10], function(item){return item % 2 == 0})
-    expect(fArr.lastCost()).toEqual(4)
+    var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+    
+    fArrWithStats.select([7,8,9,10], function(item){return item % 2 == 0})
+    expect(fArrWithStats.lastCost()).toEqual(4)
   })
 
   describe("feature requirements", function(){

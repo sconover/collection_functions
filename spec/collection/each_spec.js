@@ -28,8 +28,10 @@ describe("each", function() {
   
   describe("cost", function(){
     it("is the number of items iterated through (N)", function(){
-      fArr.each([7,8,9], function(item, i){})
-      expect(fArr.lastCost()).toEqual(3)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      fArrWithStats.each([7,8,9], function(item, i){})
+      expect(fArrWithStats.lastCost()).toEqual(3)
     })
   })
 })

@@ -39,8 +39,10 @@ describe("intersect", function() {
   })
     
   it("cost is high.  this is inefficient for now.", function(){
-    fArr.intersect([7,8,9,10,10,11], [8,10,10])
-    expect(fArr.lastCost()).toEqual(26)
+    var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+    
+    fArrWithStats.intersect([7,8,9,10,10,11], [8,10,10])
+    expect(fArrWithStats.lastCost()).toEqual(26)
   })
     
 })

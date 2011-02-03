@@ -15,8 +15,10 @@ describe("indexOf", function() {
   })
   
   it("costs the number of iterations to the 'hit' (not more)", function(){
-    fArr.include([7,8,8,9], 8)
-    expect(fArr.lastCost()).toEqual(2)
+    var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+    
+    fArrWithStats.include([7,8,8,9], 8)
+    expect(fArrWithStats.lastCost()).toEqual(2)
   })
   
   describe("feature requirements", function(){

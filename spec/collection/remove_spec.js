@@ -10,8 +10,10 @@ describe("remove", function() {
   })
     
   it("cost is the length of the collection due to creation of new collection", function(){
-    fArr.remove([7,8,9,10], 2)
-    expect(fArr.lastCost()).toEqual(4)
+    var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+    
+    fArrWithStats.remove([7,8,9,10], 2)
+    expect(fArrWithStats.lastCost()).toEqual(4)
   })
 
   describe("feature requirements", function(){

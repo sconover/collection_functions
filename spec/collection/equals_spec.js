@@ -58,8 +58,10 @@ describe("equals", function() {
   describe("cost", function(){
     
     it("costs what it takes to get to the first non-equal item", function(){
-      fArr.equals([7,8,9,10], [7,8,9999,10])
-      expect(fArr.lastCost()).toEqual(3)
+      var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+      
+      fArrWithStats.equals([7,8,9,10], [7,8,9999,10])
+      expect(fArrWithStats.lastCost()).toEqual(6)
     })
     
   })    

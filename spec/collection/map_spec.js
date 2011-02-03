@@ -26,8 +26,10 @@ describe("map", function() {
   })
   
   it("costs the number items in the collection", function(){
-    fArr.map([7,8,9], function(item){return "x" + item})
-    expect(fArr.lastCost()).toEqual(3)
+    var fArrWithStats = CollectionFunctions.Array.withStatTracking.functions
+    
+    fArrWithStats.map([7,8,9], function(item){return "x" + item})
+    expect(fArrWithStats.lastCost()).toEqual(3)
   })
   
   describe("feature requirements", function(){

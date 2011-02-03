@@ -1,3 +1,12 @@
+sorted notes...
+  should you be able to inform the uniq, etc, methods that a collection is sorted?
+  once a collection is sorted, and it's in object-style, should it remember that it's sorted?
+    should it somehow evaluate whether new members added mean it's still sorted?
+    should you be able to sort on insertion?
+  should you be able to say to uniq, "do try to check the array, to see if it's sorted, then determine whether to use a cheap or expensive algorithm (sort + uniq vs just uniq)".  The degenerate case is sort cost + 2N vs sort cost + N
+
+need to implement sort and make the set-style methods not be n^n
+
 bang methods do work in place
   you need in-place editing capability to do things in place
     append is an example of in-place editing
@@ -8,21 +17,6 @@ bang methods do work in place
 
 
 cost should really be counted by # of next's, not in 'each'
-
-declare features to function mappings up front?
-  then only return what's available to use...
-  also more performant...feature functions are resolved early.
-  need to do this such that it's not developer-error-prone.
-    hmm...just determine this when doing function mapping at the bottom?
-      default function..."BUG: Feature not available, this operation should not have been exposed."
-    
-implementations by feature...
-  size: efficient size function
-  ["size"]
-  ["size", "sort"]
-  feature.size && feature.sort
-  ...these are determined once, up-front
-  
 
 would be neat if you could dictate space- or time-efficient
 

@@ -18,6 +18,17 @@ describe("select", function() {
     var nextMatch = f.select(stream, function(item){return item == 99})
     expect(f.eof(nextMatch())).toEqual(true)
   })
+
+  it("select can 'play' into an appender", function(){
+    var stream = arrayStream([1,2,3,4,5,6])
+    var select = f.select(stream, function(item){return item %2==0})
+    
+    var arr = []
+    select.into(function(item){arr.push(item)})
+    expect(arr).toEqual([2,4,6])
+  })
+  
+
     
 })
 

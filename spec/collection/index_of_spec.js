@@ -21,6 +21,13 @@ describe("indexOf", function() {
     expect(fArrWithStats.lastCost()).toEqual(2)
   })
   
+  describe("indexesOf", function() {
+    it("finds the indexes of the first match of each item", function(){
+      var result = fArr.indexesOf([7,8,8,9,10,10,11], [8,10])
+      expect(result).toEqual([1,4])
+    })
+  })
+  
   describe("feature requirements", function(){
 
     it("requires iterator, nothing, equals", function(){

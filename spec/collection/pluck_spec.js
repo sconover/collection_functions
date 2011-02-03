@@ -15,6 +15,13 @@ describe("pluck - a convenient form of map", function() {
     expect(fArr.pluck(arr, 'a')).toEqual([1,2,3])
   })
 
+  it("'this' is the item", function(){
+    var arr = [
+      {a:function(){return this.x}, x:999}
+    ]
+    expect(fArr.pluck(arr, 'a')).toEqual([999])
+  })
+
   describe("feature requirements", function(){
 
     it("requires newCollection, append, and iterator", function(){

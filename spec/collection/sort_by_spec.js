@@ -6,6 +6,7 @@ describe("sort by", function() {
   
   it("sorts the collection by the value returned out of the callback", function(){
     expect(fArr.sortBy([5,6,7,8], function(item){return -1 * item})).toEqual([8,7,6,5])
+    expect(fArr.sortBy([5,7,8,6], function(item){return item})).toEqual([5,6,7,8])
     expect(fArr.sortBy([], function(item){return -1 * item})).toEqual([])
   })
   

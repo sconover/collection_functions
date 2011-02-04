@@ -13,6 +13,7 @@ describe("at index", function() {
   it("gets values at positions", function(){
     expect(fArr.get([7,8,9], [0,2])).toEqual([7,9])
     
+    expect(fArr.get([7,8,9], [2])).toEqual([9])
     expect(fArr.get([7,8,9], [])).toEqual([])
   })
   

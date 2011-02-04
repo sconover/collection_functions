@@ -6,7 +6,7 @@ describe("to collection", function() {
   
   it("converts anything array-like into the collection type", function(){    
     var foo = function() {
-      var array = fArr.toCollection(arguments)
+      var array = fArr.toArray(arguments)
       expect(array).toEqual([7,8,9])
       
       array.push(10)
@@ -32,7 +32,7 @@ describe("to collection", function() {
       } 
     }
     
-    expect(fArr.toCollection([[1,7],[2,8],[3,9]], twoDIterator)).toEqual([7,8,9])
+    expect(fArr.toArray([[1,7],[2,8],[3,9]], twoDIterator)).toEqual([7,8,9])
   })
   
   describe("feature requirements", function(){

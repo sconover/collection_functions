@@ -9,6 +9,14 @@ describe("flatten", function() {
     expect(result).toEqual([1,2,3,4,5,6,7])
   })
   
+  it("other cases", function(){
+    expect(fArr.flatten([[[3]]])).toEqual([3])
+    expect(fArr.flatten([[[]]])).toEqual([])
+    expect(fArr.flatten([])).toEqual([])
+
+    expect(fArr.flatten([[['Jane']]])).toEqual(['Jane'])
+  })
+  
   it("returns the same collection if there's nothing to do", function(){
     var result = fArr.flatten([1,2,3,4,5,6,7])
     expect(result).toEqual([1,2,3,4,5,6,7])

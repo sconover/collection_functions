@@ -7,4 +7,4 @@ for(var key in jasmine) {
   global[key] = jasmine[key]
 }
 
-require("async_functions")
+require("event_functions")

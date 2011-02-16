@@ -2,7 +2,7 @@ require("./spec_helper.js");
 
 describe("filter", function() {
   
-  var f = AsyncFunctions().functions
+  var f = EventFunctions().functions
   
   it("filter out items", function(){
     var results = []    

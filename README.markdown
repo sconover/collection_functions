@@ -2,7 +2,7 @@ CollectionFunctions is a javascript library that provides classic collection man
 
 I'm a fan of underscore.js [LINK] but I found I needed collection functions that didn't make strong assumptions about the underlying storage format (underscore assumes Arrays).
 
-CollectionFunctions.Array is an Array-backed instance of the functions, which can be used very much like underscore:
+CollectionFunctions.Array is an Array-backed instance of the functions, which can be used very much like underscore
 
     //aside: http://aresemicolonsnecessaryinjavascript.com
     

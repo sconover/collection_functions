@@ -26,5 +26,23 @@ describe("layer on stats-tracking capability", function() {
     fArrWithStats.uniq([7,8,9,10,10,11])
     expect(fArrWithStats.lastCost()).toEqual(20)
   })
+
+  it("totalCost returns the cost of all calls since reset", function(){
+    var fArrWithStats = arrayCF.withStatTracking.functions
+    fArrWithStats.resetTotalCost()
+    expect(fArrWithStats.totalCost()).toEqual(0)
+    
+    fArrWithStats.each([7,8,9], function(item){/*dont care*/})
+    expect(fArrWithStats.totalCost()).toEqual(3)
+        
+    expect(fArrWithStats.select([1,2,3,4,5,6], function(item){return item %2 == 0})).toEqual([2,4,6])
+    expect(fArrWithStats.totalCost()).toEqual(9)
+    
+    fArrWithStats.resetTotalCost()
+    expect(fArrWithStats.totalCost()).toEqual(0)
+    
+    fArrWithStats.each([7,8,9], function(item){/*dont care*/})
+    expect(fArrWithStats.totalCost()).toEqual(3)
+  })
 })
 

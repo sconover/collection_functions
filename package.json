@@ -1,0 +1,8 @@
+{ "name": "collection_functions", 
+  "version": "0.0.1", 
+  "description": "Provides typical collection/enumerable functions (think underscore.js) - but it's agnostic about storage and iteration details.", 
+  "main": "index.js",
+  "keywords": ["collection", "underscore", "array", "enumerable", "enumerator", "iterator"],
+  "homepage": "https://github.com/sconover/collection_functions",
+  "author": {"name": "Steve Conover", "email": "sconover@gmail.com", "url": "https://github.com/sconover"},
+  "repository": { "type": "git", "url": "https://github.com/sconover/collection_functions.git" } }

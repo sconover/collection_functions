@@ -7,7 +7,7 @@ for(var key in jasmine) {
   global[key] = jasmine[key]
 }
 
-require("collection_functions")
+CollectionFunctions = require("collection_functions")
 
 minimalArrayCF = function(){
   return CollectionFunctions({

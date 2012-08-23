@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/sconover/collection_functions.png)](http://travis-ci.org/sconover/collection_functions)
 CollectionFunctions is a javascript library that provides classic collection manipulation functionality (each, select, map, etc).
 
 I'm a fan of underscore.js [LINK] but I found I needed collection functions that didn't make strong assumptions about the underlying storage format (underscore assumes Arrays).

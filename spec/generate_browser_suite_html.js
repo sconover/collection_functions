@@ -1,5 +1,5 @@
 var fs = require("fs"),
-    sys = require("sys")
+    util = require('util')
 
 function allSpecFiles(rootDir) {
   var files = []
@@ -26,9 +26,9 @@ var result = template.replace("<!-- SPECS -->", "\n\n" + jsScriptSrcLines.join("
 
 fs.writeFile(__dirname + "/browser_suite.html", result, function(err){
   if(err) {
-    sys.puts(err);
+    util.puts(err);
   } else {
-    sys.puts("");
-    sys.puts(">> WROTE BROWSER SUITE");
+    util.puts("");
+    util.puts(">> WROTE BROWSER SUITE");
   }
 })
